@@ -1,7 +1,7 @@
 import java.io.IOException;
 import java.util.Scanner;
 
-public class boj11986_by {
+public class boj10986_by {
 
     // 주어진 수열에서 부분 수열의 합이 M으로 나누어떨어지는 경우의 수를 구하는 문제입니다. 
     public static void main(String[] args) throws IOException{
