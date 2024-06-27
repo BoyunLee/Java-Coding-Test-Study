@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class pgs_예산_by {
+public class pgs12982_by {
     class Solution {
         public int solution(int[] d, int budget) {
             int answer = 0;

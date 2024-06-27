@@ -1,4 +1,4 @@
-public class pgs_연속된부분수열의합_by {
+public class pgs178870_by {
     class Solution {
         public int[] solution(int[] sequence, int k) {
             int[] answer = {};

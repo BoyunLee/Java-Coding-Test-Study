@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class pgs_소수만들기_by {
+public class pgs12977_by {
     class Solution {
         public int solution(int[] nums) {
             int answer = 0;
