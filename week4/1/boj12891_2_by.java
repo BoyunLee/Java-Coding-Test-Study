@@ -1,4 +1,6 @@
 /*
+시간초과 발생하지 않도록 투포인터 사용
+
 평소에 문자열을 가지고 노는 것을 좋아하는 민호는 DNA 문자열을 알게 되었다. 
 DNA 문자열은 모든 문자열에 등장하는 문자가 {‘A’, ‘C’, ‘G’, ‘T’} 인 문자열을 말한다. 
 예를 들어 “ACKA”는 DNA 문자열이 아니지만 “ACCA”는 DNA 문자열이다. 
@@ -24,7 +26,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class boj12891_by {
+public class boj12891_2_by {
     public static void main(String[] args) throws IOException{
 
         // 표준 입력을 문자로 읽고 버퍼링하여 효율적으로 처리할 수 있도록 하는 객체를 생성
@@ -46,6 +48,29 @@ public class boj12891_by {
 		}
 
         int count = 0;
+
+        for(int end=0; end<S; end++){
+            for (int start = 0; start <= S - P; start++) {
+                // 부분문자열을 만들기
+                int[] check = new int[4];
+                // 조건을 판단하기 위한 초기 설정
+                boolean isValid = true;
+            }
+            // 부분문자열을 순회하며 각 문자의 등장 횟수 세기
+            for (int j = i; j < i + P; j++) {
+                char currentChar = Minho[j];
+
+                if (currentChar == 'A') {
+                    check[0]++;
+                } else if (currentChar == 'C') {
+                    check[1]++;
+                } else if (currentChar == 'G') {
+                    check[2]++;
+                } else if (currentChar == 'T') {
+                    check[3]++;
+                }
+            }
+
 
         // 가능한 모든 부분문자열을 확인
         for (int i = 0; i <= S - P; i++) {
@@ -84,3 +109,4 @@ public class boj12891_by {
         System.out.println(count);
     }
 }
+
