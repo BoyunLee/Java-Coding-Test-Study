@@ -1,4 +1,6 @@
 /*
+*완주하기 못한 선수가 1명이기에 해시가 아닌 쏠드 정렬로 문제 풀어봄
+
 해시 - 완주하지 못한 선수
 
 수많은 마라톤 선수들이 마라톤에 참여하였습니다. 단 한 명의 선수를 제외하고는 모든 선수가 마라톤을 완주하였습니다.
@@ -13,28 +15,21 @@ completion의 길이는 participant의 길이보다 1 작습니다.
 참가자 중에는 동명이인이 있을 수 있습니다.
 */
 
-import java.util.HashMap;
+import java.util.Arrays;
 
-public class pgs42576_by {
+public class pgs42576_2_by {
     class Solution {
         public String solution(String[] participant, String[] completion) {
-            String answer = "";
-            HashMap<String, Integer> map = new HashMap<>();
-            
-            // participant 배열 순회
-            for (String p : participant) {
-                map.put(p, map.getOrDefault(p, 0) + 1);
-            }
 
-            // completion 배열 순회
-            for (String c : completion) {
-                map.put(c, map.get(c) - 1);
-            }
+            Arrays.sort(participant);
+            Arrays.sort(completion);
+
+            String answer = participant[participant.length - 1];
             
-            // 해시맵에서 값이 0이 아닌 참가자 찾기
-            for (String key : map.keySet()) {
-                if (map.get(key) != 0) {
-                    return key;
+            for (int i = 0; i < completion.length; i++) {
+                if(!participant[i].equals(completion[i])){
+                    answer = participant[i];
+                    break;
                 }
             }
             return answer;
