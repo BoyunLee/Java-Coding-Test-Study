@@ -10,28 +10,28 @@ public class boj11659_by {
     // throws IOException : 입출력 예외를 처리하지 않고 호출한 곳으로 전달.
     public static void main(String[] args) throws IOException {
         
-    // 입력 준비 및 초기화
-    BufferedReader bufferedReader =
-        // System.in: 표준 입력 스트림(콘솔 입력).
-        // BufferedReader: 효율적으로 문자, 배열, 행 등을 읽기 위해 사용.
-        new BufferedReader (new InputStreamReader (System. in));
-    StringTokenizer stringTokenizer =
-        new StringTokenizer(bufferedReader.readLine());
-    int suNo = Integer.parseInt(stringTokenizer. nextToken());
-    int quizNo = Integer.parseInt(stringTokenizer.nextToken());
-    
-    // prefix sum 배열. S[i]는 첫 번째 요소부터 i번째 요소까지의 합을 저장. S 다른 이름 지정 가능.
-    long[] S = new long[suNo + 1];
-    stringTokenizer = new StringTokenizer(bufferedReader. readLine());
-    for (int i = 1; i <= suNo; i++) {
-        // 이전 합에 현재 요소를 더하여 현재까지의 합을 계산.
-        S[i] = S[i - 1] + Integer.parseInt(stringTokenizer.nextToken());
+        // 입력 준비 및 초기화
+        BufferedReader bufferedReader =
+            // System.in: 표준 입력 스트림(콘솔 입력).
+            // BufferedReader: 효율적으로 문자, 배열, 행 등을 읽기 위해 사용.
+            new BufferedReader (new InputStreamReader (System. in));
+        StringTokenizer stringTokenizer =
+            new StringTokenizer(bufferedReader.readLine());
+        int suNo = Integer.parseInt(stringTokenizer. nextToken());
+        int quizNo = Integer.parseInt(stringTokenizer.nextToken());
+        
+        // prefix sum 배열. S[i]는 첫 번째 요소부터 i번째 요소까지의 합을 저장. S 다른 이름 지정 가능.
+        long[] S = new long[suNo + 1];
+        stringTokenizer = new StringTokenizer(bufferedReader. readLine());
+        for (int i = 1; i <= suNo; i++) {
+            // 이전 합에 현재 요소를 더하여 현재까지의 합을 계산.
+            S[i] = S[i - 1] + Integer.parseInt(stringTokenizer.nextToken());
+        }
+        for (int q = 0; q < quizNo; q++) {
+            stringTokenizer = new StringTokenizer (bufferedReader.readLine());
+            int i = Integer.parseInt(stringTokenizer.nextToken());
+            int j = Integer.parseInt(stringTokenizer.nextToken());
+            System. out.println(S[j] - S[i - 1]);
+        }
     }
-    for (int q = 0; q < quizNo; q++) {
-        stringTokenizer = new StringTokenizer (bufferedReader.readLine());
-        int i = Integer.parseInt(stringTokenizer.nextToken());
-        int j = Integer.parseInt(stringTokenizer.nextToken());
-        System. out.println(S[j] - S[i - 1]);
-    }
-}
 }
